@@ -1,15 +1,17 @@
-mod exmaples;
-use exmaples::data_types::data_types;
-use exmaples::guessing_game::guessing_game;
-use exmaples::hello_world::hello_world;
-use exmaples::variables::variables;
-use exmaples::functions::functions;
-use exmaples::control_flow::control_flow;
-use exmaples::ownership::ownership;
+mod examples;
+use examples::data_types::data_types;
+use examples::guessing_game::guessing_game;
+use examples::hello_world::hello_world;
+use examples::variables::variables;
+use examples::functions::functions;
+use examples::control_flow::control_flow;
+use examples::ownership::ownership;
+use examples::borrowing::borrowing;
+use examples::slices::slices;
+use examples::structs::structs;
 
 fn main() {
     let test: bool = false;
-
     if test {
         hello_world();
         guessing_game();
@@ -17,9 +19,9 @@ fn main() {
         data_types();
         functions();
         control_flow();
+        ownership();
+        borrowing();
+        slices();
     }
-
-    ownership();
-
-
+    structs();
 }
