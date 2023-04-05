@@ -9,6 +9,8 @@ use examples::ownership::ownership;
 use examples::borrowing::borrowing;
 use examples::slices::slices;
 use examples::structs::structs;
+use examples::enums::enums;
+use examples::collections::collections;
 
 fn main() {
     let test: bool = false;
@@ -22,6 +24,8 @@ fn main() {
         ownership();
         borrowing();
         slices();
+        structs();
+        enums();
     }
-    structs();
+    collections();
 }

@@ -123,6 +123,7 @@ pub fn structs() {
     println!("Big rect can hold small rect: {can_hold}");
 
     // associated methods (method that do not take in &self) are often used to construct a type from a struct
+    // associated methods are accessed using "::"
     impl Rectangle {
         fn square(size: u32) -> Self {
             Self { width: size, height: size }
