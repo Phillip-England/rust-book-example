@@ -1,5 +1,4 @@
 pub fn borrowing() {
-
     // using a reference for a function parameter
     fn calculate_length(s: &String) -> usize {
         s.len()
@@ -64,6 +63,4 @@ pub fn borrowing() {
     }
     let the_value = no_dangle();
     println!("The value is: {the_value}");
-
-
 }

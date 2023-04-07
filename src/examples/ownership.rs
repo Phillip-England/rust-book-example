@@ -1,5 +1,4 @@
 pub fn ownership() {
-
     // ownership rules
     // 1. Each value in Rust has an owner.
     // 2. There can only be one owner at a time.
@@ -48,7 +47,4 @@ pub fn ownership() {
     }
     (x, y) = double_two_numbers(x, y);
     println!("x = {x} y = {y}");
-
-
-
 }

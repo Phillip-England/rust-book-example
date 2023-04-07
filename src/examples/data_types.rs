@@ -75,7 +75,7 @@ pub fn data_types() {
         "December",
     ];
 
-    // shorthand init for arrays 
+    // shorthand init for arrays
     let arr: [i32; 5] = [3; 5]; // [3, 3, 3, 3, 3]
 
     // trying to access an array index which doesn't exist will cause a panic
@@ -90,7 +90,4 @@ pub fn data_types() {
         .expect("Index entered was not a number");
     let element = arr[index];
     println!("The value of the element at index {index} is: {element}");
-
-
-
 }

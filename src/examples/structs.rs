@@ -1,11 +1,10 @@
 pub fn structs() {
-
     // creating a struct
     struct User {
         active: bool,
         username: String,
         email: String,
-        sign_in_count: u64, 
+        sign_in_count: u64,
     }
 
     // using a struct to create a value
@@ -27,11 +26,14 @@ pub fn structs() {
         User {
             active: true,
             username, // using a shorthand to define username
-            email, // using a shorthand to define email
+            email,    // using a shorthand to define email
             sign_in_count: 1,
         }
     }
-    let _user2: User = build_user(String::from("myemail@example.com"), String::from("rustyboy11"));
+    let _user2: User = build_user(
+        String::from("myemail@example.com"),
+        String::from("rustyboy11"),
+    );
 
     // building a new struct from other structs
     // this pulls all values from user1 except the email and copies them into user3
@@ -61,14 +63,19 @@ pub fn structs() {
     fn area(width: u32, height: u32) -> u32 {
         width * height
     }
-    println!("The area of the rectangle is {} square pixels", {area(width1, height1)});
+    println!("The area of the rectangle is {} square pixels", {
+        area(width1, height1)
+    });
 
     // in the above example, the parameters are not grouped, so we can use a tuple instead
     let rect1: (u32, u32) = (100, 200);
     fn tuple_area(dimensions: (u32, u32)) -> u32 {
         dimensions.0 * dimensions.1
     }
-    println!("the area of the tuple rectangle is {} squared pixels", tuple_area(rect1));
+    println!(
+        "the area of the tuple rectangle is {} squared pixels",
+        tuple_area(rect1)
+    );
 
     // refactoring to use a struct instead of a tuple
     #[derive(Debug)] // allows us to print out our struct
@@ -76,12 +83,18 @@ pub fn structs() {
         width: u32,
         height: u32,
     }
-    let rect2: Rectangle = Rectangle { width: 200, height: 400 };
+    let rect2: Rectangle = Rectangle {
+        width: 200,
+        height: 400,
+    };
     // using a ref to Rectangle allows the top level function to maintain ownership after the func call
     fn struct_area(rectangle: &Rectangle) -> u32 {
         rectangle.width * rectangle.height
     }
-    println!("the area of the struct rectangle is {} pixels squared", struct_area(&rect2));
+    println!(
+        "the area of the struct rectangle is {} pixels squared",
+        struct_area(&rect2)
+    );
 
     // viewing struct details with debug
     // we use a ref so dbg! does not take ownership of rect2
@@ -117,8 +130,14 @@ pub fn structs() {
         }
     }
 
-    let small_rect: Rectangle = Rectangle { width: 10, height: 20 };
-    let big_rect: Rectangle = Rectangle { width:  100, height: 200 };
+    let small_rect: Rectangle = Rectangle {
+        width: 10,
+        height: 20,
+    };
+    let big_rect: Rectangle = Rectangle {
+        width: 100,
+        height: 200,
+    };
     let can_hold: bool = big_rect.can_hold(&small_rect);
     println!("Big rect can hold small rect: {can_hold}");
 
@@ -126,10 +145,11 @@ pub fn structs() {
     // associated methods are accessed using "::"
     impl Rectangle {
         fn square(size: u32) -> Self {
-            Self { width: size, height: size }
+            Self {
+                width: size,
+                height: size,
+            }
         }
     }
     let some_square: Rectangle = Rectangle::square(10);
-
-
 }

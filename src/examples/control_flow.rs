@@ -1,5 +1,4 @@
 pub fn control_flow() {
-
     // if statements
     let number = 3;
     if number < 5 {
@@ -44,7 +43,7 @@ pub fn control_flow() {
     let result = loop {
         counter += 1;
         if counter == 10 {
-            break counter * 2 // value is returned here (can omit semicolon or include)
+            break counter * 2; // value is returned here (can omit semicolon or include)
         }
     };
     println!("The result is {result}");
@@ -87,6 +86,4 @@ pub fn control_flow() {
         println!("{number}");
     }
     println!("LIIFTOFF.. AGAIN!!!");
-
-
 }

@@ -1,11 +1,10 @@
 pub fn enums() {
-
     // creating an enum
     // each enum can have variants
     // each variant can take in different types of data
     enum IpAddrKind {
         V4(u8, u8, u8, u8),
-        V6(String)
+        V6(String),
     }
 
     // creating an instance of an enum
@@ -48,7 +47,7 @@ pub fn enums() {
         Penny,
         Nickle,
         Dime,
-        Quarter(UsState)
+        Quarter(UsState),
     }
     fn value_in_cents(coin: Coin) -> u8 {
         // the result of the match statement is returned
@@ -57,7 +56,7 @@ pub fn enums() {
             Coin::Penny => {
                 println!("lucky penny");
                 1
-            },
+            }
             Coin::Nickle => 5,
             Coin::Dime => 10,
             Coin::Quarter(state) => {
@@ -127,7 +126,7 @@ pub fn enums() {
     //here is an example where we do this the verbose way
     let config_max = Some(3u8);
     match config_max {
-        Some(max) => println!("the max is configured to be {}" ,max),
+        Some(max) => println!("the max is configured to be {}", max),
         _ => (), // do nothing if we do not have some value
     }
 
@@ -145,7 +144,4 @@ pub fn enums() {
     } else {
         _count += 1;
     }
-
-    
-
 }

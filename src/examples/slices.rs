@@ -1,5 +1,4 @@
 pub fn slices() {
-
     // refering to part of a string
     let s = String::from("hello world");
     let hello = &s[..5];
@@ -24,16 +23,14 @@ pub fn slices() {
     let s = String::from("This is many words!");
     let first = first_word(&s);
     println!("the first word is: {first}");
-    
+
     // slices are tied to the original string they are derived from
     // if the original string goes out of scope, the slice becomes invalid
     // s.clear();
     // println!("this is not valid: {first}");
 
     // slices of arrays
-    let a = [1,2,3,4,5];
+    let a = [1, 2, 3, 4, 5];
     let slice = &a[1..3];
     assert_eq!(slice, &[2, 3]); // setting a test, if the values are not equal, an error will be thrown
-
-
 }

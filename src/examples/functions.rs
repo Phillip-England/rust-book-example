@@ -1,5 +1,4 @@
 pub fn functions() {
-
     fn another_function(x: i32, unit_label: char) {
         println!("another function!");
         println!("The value of x is: {x}{unit_label}");
@@ -31,6 +30,4 @@ pub fn functions() {
     // shadowing x
     let x = plus_one(2);
     println!("The value of x is: {x}");
-
-
 }

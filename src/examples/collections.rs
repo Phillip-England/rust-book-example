@@ -1,5 +1,4 @@
 pub fn collections() {
-
     // empty vector
     let _v: Vec<i32> = Vec::new();
 
@@ -25,7 +24,7 @@ pub fn collections() {
     let third: Option<&i32> = v.get(2);
     match third {
         Some(third) => println!("the third element is still {third}"),
-        None => println!("there is no third element!")
+        None => println!("there is no third element!"),
     }
 
     // the borrow checker prevents us from adding items to a vector if a reference to it is held
@@ -164,5 +163,4 @@ pub fn collections() {
         *count += 1;
     }
     println!("{:?}", map);
-
 }
