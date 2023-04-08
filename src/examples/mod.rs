@@ -13,3 +13,4 @@ pub mod slices;
 pub mod structs;
 pub mod tests;
 pub mod variables;
+pub mod mini_grep;
