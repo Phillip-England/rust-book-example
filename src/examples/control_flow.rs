@@ -1,3 +1,4 @@
+#[allow(unused)]
 pub fn control_flow() {
     // if statements
     let number = 3;

@@ -1,3 +1,5 @@
+
+#[allow(unused)]
 pub fn borrowing() {
     // using a reference for a function parameter
     fn calculate_length(s: &String) -> usize {

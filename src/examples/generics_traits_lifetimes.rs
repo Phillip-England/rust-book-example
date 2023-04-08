@@ -1,7 +1,7 @@
-use std::fmt::{Display, Debug};
+use std::fmt::{Debug, Display};
 
+#[allow(unused)]
 pub fn generic_traits_lifetimes() {
-
     // using generics in a struct definition
     struct Point<T> {
         x: T,
@@ -9,7 +9,7 @@ pub fn generic_traits_lifetimes() {
     }
 
     // building the point with different data types
-    let integer = Point{ x: 5, y: 10 };
+    let integer = Point { x: 5, y: 10 };
     let float = Point { x: 1.0, y: 4.0 };
 
     // but you cannot mix types with our scruct because it only has one type T
@@ -45,7 +45,10 @@ pub fn generic_traits_lifetimes() {
     }
 
     // lets use the method for floats on a float
-    println!("the distance from the origin for our float is: {}", float.distance_from_origin());
+    println!(
+        "the distance from the origin for our float is: {}",
+        float.distance_from_origin()
+    );
 
     // but if we try to apply this to a Point build with integers, it will cause a panic
     // the following method call will fail
@@ -102,7 +105,6 @@ pub fn generic_traits_lifetimes() {
         // so the above method is using some default implmentation
         // but the below trait will be required to be defined with our types
         fn summarize_author(&self) -> String;
-
     }
 
     // lets create some types to implement our trait on
@@ -143,9 +145,7 @@ pub fn generic_traits_lifetimes() {
     // creating instances of our types and calling the summarize method
     let tweet = Tweet {
         username: String::from("horse_ebook"),
-        content: String::from(
-            "of course, as you probably know, people"
-        ),
+        content: String::from("of course, as you probably know, people"),
         reply: false,
         retweet: false,
     };
@@ -163,18 +163,27 @@ pub fn generic_traits_lifetimes() {
         fn summarize_author(&self) -> String {
             format!("{}", self.author)
         }
-    } 
-        
-    let post: Post = Post { author: String::from("Bill"), content: String::from("I was walking and then..") };
+    }
+
+    let post: Post = Post {
+        author: String::from("Bill"),
+        content: String::from("I was walking and then.."),
+    };
     println!("Using posts default summarize method: {}", post.summarize());
-    println!("Using posts default summarize_reliant_on_author method: {}", post.summarize_reliant_on_author());
+    println!(
+        "Using posts default summarize_reliant_on_author method: {}",
+        post.summarize_reliant_on_author()
+    );
 
     // we can also use traits as parameters for functions
     // basically, any type with the trait can be passed to the function
     // notice how we are taking a reference to the type with the trait
     // this means when we call the function we must pass a reference of our type which contains the trait
     pub fn notify(item: &impl Summary) {
-        println!("Printing from a function which takes a trait as a param! Result = {}", item.summarize());
+        println!(
+            "Printing from a function which takes a trait as a param! Result = {}",
+            item.summarize()
+        );
     }
     // here we use the method, and we are sure to pass the reference to tweet
     notify(&tweet);
@@ -207,18 +216,17 @@ pub fn generic_traits_lifetimes() {
     fn some_function<T, U>(t: &T, u: &U) -> i32
     where
         T: Display + Clone,
-        U: Clone + Debug, {
-            2
-        }
-        
+        U: Clone + Debug,
+    {
+        2
+    }
+
     // we can also use traits as return types from function
     // the return type here must implement the trait Summary
     fn returns_summarizable() -> impl Summary {
         Tweet {
             username: String::from("horse_ebooks"),
-            content: String::from(
-                "of course, as you probably already know, people",
-            ),
+            content: String::from("of course, as you probably already know, people"),
             reply: false,
             retweet: false,
         }
@@ -270,7 +278,7 @@ pub fn generic_traits_lifetimes() {
     // now we implement a method on pair which every one can use
     impl<T> Pair<T> {
         fn new(x: T, y: T) -> Self {
-            Self {x, y}
+            Self { x, y }
         }
     }
 
@@ -279,7 +287,7 @@ pub fn generic_traits_lifetimes() {
     impl<T: Display + PartialOrd> Pair<T> {
         fn cmp_display(&self) {
             if self.x >= self.y {
-                println!("the largest member is x = {}" , self.x);
+                println!("the largest member is x = {}", self.x);
             } else {
                 println!("the largest member is y = {}", self.y);
             }
@@ -401,11 +409,7 @@ pub fn generic_traits_lifetimes() {
     println!("{static_string}");
 
     // an example of a function which uses trait bounds, lifetimes, and generics all in one
-    fn longest_with_an_announcement<'a, T>(
-        x: &'a str,
-        y: &'a str,
-        ann: T,
-    ) -> &'a str
+    fn longest_with_an_announcement<'a, T>(x: &'a str, y: &'a str, ann: T) -> &'a str
     where
         T: Display,
     {
@@ -416,6 +420,4 @@ pub fn generic_traits_lifetimes() {
             y
         }
     }
-
-
 }

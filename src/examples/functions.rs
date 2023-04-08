@@ -1,3 +1,5 @@
+
+#[allow(unused)]
 pub fn functions() {
     fn another_function(x: i32, unit_label: char) {
         println!("another function!");

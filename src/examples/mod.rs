@@ -11,4 +11,5 @@ pub mod hello_world;
 pub mod ownership;
 pub mod slices;
 pub mod structs;
+pub mod tests;
 pub mod variables;

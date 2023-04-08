@@ -1,3 +1,4 @@
+#[allow(unused)]
 pub fn structs() {
     // creating a struct
     struct User {

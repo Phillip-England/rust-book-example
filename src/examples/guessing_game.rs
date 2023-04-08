@@ -2,6 +2,7 @@ use std::{cmp::Ordering, io};
 
 use rand::Rng;
 
+#[allow(unused)]
 pub fn guessing_game() {
     println!("Guess the number!");
 

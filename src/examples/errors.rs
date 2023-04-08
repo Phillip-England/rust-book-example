@@ -4,6 +4,7 @@ use std::{
     io::{self, ErrorKind},
 };
 
+#[allow(unused)]
 pub fn errors() {
     // manually make the program crash
     // panic!("crash and burn");

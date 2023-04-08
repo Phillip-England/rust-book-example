@@ -1,3 +1,4 @@
+#[allow(unused)]
 pub fn slices() {
     // refering to part of a string
     let s = String::from("hello world");

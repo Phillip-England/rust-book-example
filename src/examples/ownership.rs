@@ -1,3 +1,4 @@
+#[allow(unused)]
 pub fn ownership() {
     // ownership rules
     // 1. Each value in Rust has an owner.

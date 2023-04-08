@@ -1,3 +1,4 @@
+#[allow(unused)]
 pub fn enums() {
     // creating an enum
     // each enum can have variants

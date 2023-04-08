@@ -1,5 +1,6 @@
 use std::io;
 
+#[allow(unused)]
 pub fn data_types() {
     // unused variables can be preceeded by "_" to prevent compiler from complaining
 

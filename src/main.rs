@@ -30,6 +30,6 @@ fn main() {
         enums();
         collections();
         errors();
+        generic_traits_lifetimes();
     }
-    generic_traits_lifetimes();
 }

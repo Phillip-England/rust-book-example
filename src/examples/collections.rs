@@ -1,3 +1,4 @@
+#[allow(unused)]
 pub fn collections() {
     // empty vector
     let _v: Vec<i32> = Vec::new();
